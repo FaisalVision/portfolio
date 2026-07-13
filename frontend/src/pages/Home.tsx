@@ -1,12 +1,19 @@
-import MainLayout from "../layouts/MainLayout";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 
-function Home() {
+const Home = () => {
   return (
-    <MainLayout>
+    <>
+      <Navbar />
       <Hero />
-    </MainLayout>
+      <About />
+      <Projects />
+      <Skills />
+    </>
   );
-}
+};
 
 export default Home;

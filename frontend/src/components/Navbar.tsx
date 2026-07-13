@@ -1,35 +1,28 @@
-import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20"
-    >
+    <nav className="w-full fixed top-0 z-50 bg-black/40 backdrop-blur-lg border-b border-purple-500/20">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <h1 className="text-2xl font-bold text-purple-400">
-          FaisalVision
+          Faisal<span className="text-white">Vision</span>
         </h1>
 
-        <ul className="flex gap-8 text-white">
-          <li className="hover:text-purple-400 cursor-pointer transition">
-            Home
-          </li>
-          <li className="hover:text-purple-400 cursor-pointer transition">
-            About
-          </li>
-          <li className="hover:text-purple-400 cursor-pointer transition">
-            Projects
-          </li>
-          <li className="hover:text-purple-400 cursor-pointer transition">
-            Contact
-          </li>
+        <ul className="hidden md:flex gap-8 text-gray-300">
+          <li className="hover:text-purple-400 cursor-pointer">Home</li>
+          <li className="hover:text-purple-400 cursor-pointer">About</li>
+          <li className="hover:text-purple-400 cursor-pointer">Projects</li>
+          <li className="hover:text-purple-400 cursor-pointer">Skills</li>
+          <li className="hover:text-purple-400 cursor-pointer">Contact</li>
         </ul>
+
+        <div className="flex gap-4 text-xl">
+          <FaGithub className="cursor-pointer hover:text-purple-400" />
+          <FaLinkedin className="cursor-pointer hover:text-purple-400" />
+        </div>
       </div>
-    </motion.nav>
+    </nav>
   );
-}
+};
 
 export default Navbar;
