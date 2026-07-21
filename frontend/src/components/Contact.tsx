@@ -5,6 +5,7 @@ import {
   FaEnvelope,
   FaGithub,
   FaLinkedin,
+  FaPhone,
   FaInstagram,
   FaWhatsapp,
   FaMapMarkerAlt,
@@ -34,12 +35,44 @@ const Contact = () => {
 
             <div className="flex items-center gap-4">
               <FaEnvelope className="text-purple-400 text-xl" />
-              <span>{contact.email}</span>
+              <a
+                href={`mailto:${contact.email}`}
+                className="hover:text-purple-400 transition"
+              >
+                {contact.email}
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaPhone className="text-purple-400 text-xl" />
+              <a
+                href={`tel:${contact.phone}`}
+                className="hover:text-purple-400 transition"
+              >
+                {contact.phone}
+              </a>
             </div>
 
             <div className="flex items-center gap-4">
               <FaMapMarkerAlt className="text-purple-400 text-xl" />
-              <span>{contact.location}</span>
+              <a
+                href={`https://www.google.com/maps/search/${encodeURIComponent(contact.location)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-purple-400 transition"
+              >
+                {contact.location}
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaWhatsapp className="text-green-400 text-xl" />
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-green-400 transition"
+              >
+                {contact.phone}
+              </a>
             </div>
 
           </div>
@@ -47,19 +80,19 @@ const Contact = () => {
           <div className="flex gap-6 pt-8 text-3xl">
 
             <a href={contact.github} target="_blank" rel="noreferrer">
-              <FaGithub className="hover:text-purple-400 transition" />
+              <FaGithub className="hover:text-purple-400 hover:scale-125 transition duration-300" />
             </a>
 
             <a href={contact.linkedin} target="_blank" rel="noreferrer">
-              <FaLinkedin className="hover:text-purple-400 transition" />
+              <FaLinkedin className="hover:text-purple-400 hover:scale-125 transition duration-300" />
             </a>
 
             <a href={contact.instagram} target="_blank" rel="noreferrer">
-              <FaInstagram className="hover:text-pink-500 transition" />
+              <FaInstagram className="hover:text-pink-500 hover:scale-125 transition duration-300" />
             </a>
 
             <a href={contact.whatsapp} target="_blank" rel="noreferrer">
-              <FaWhatsapp className="hover:text-green-500 transition" />
+              <FaWhatsapp className="hover:text-green-500 hover:scale-125 transition duration-300" />
             </a>
 
           </div>

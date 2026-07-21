@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { experience } from "../data/experience";
+import { experience } from "../data/journey";
 
 const Experience = () => {
   return (
@@ -26,9 +26,23 @@ const Experience = () => {
             >
               <div className="absolute -left-[41px] w-5 h-5 rounded-full bg-purple-500 border-4 border-black"></div>
 
-              <p className="text-purple-400 font-semibold">
-                {item.year}
-              </p>
+              <div className="flex items-center gap-3">
+
+                <p className="text-purple-400 font-semibold">
+                  {item.year}
+                </p>
+
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    item.status === "Current"
+                      ? "bg-green-500/20 text-green-300 border border-green-500/30"
+                      : "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                  }`}
+                >
+                  {item.status}
+                </span>
+
+              </div>
 
               <h3 className="text-2xl font-bold mt-2">
                 {item.title}

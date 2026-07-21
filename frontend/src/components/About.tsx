@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { about } from "../data/about";
 
 const About = () => {
   return (
@@ -19,10 +20,7 @@ const About = () => {
           </h2>
 
           <p className="text-gray-400 leading-8">
-            I'm Muhammad Faisal, a Software Engineering student with a strong
-            interest in Full Stack Development and Artificial Intelligence.
-            I enjoy building professional software that solves real-world
-            problems while continuously improving my development skills.
+            {about.description}
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4">
@@ -33,7 +31,7 @@ const About = () => {
               </h3>
 
               <p className="text-gray-400 mt-2">
-                BS Software Engineering
+                {about.education}
               </p>
             </div>
 
@@ -43,7 +41,7 @@ const About = () => {
               </h3>
 
               <p className="text-gray-400 mt-2">
-                Bahria University
+                {about.university}
               </p>
             </div>
 
@@ -58,10 +56,12 @@ const About = () => {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="w-80 h-80 rounded-3xl bg-gradient-to-br from-purple-600/30 to-black border border-purple-500/30 flex items-center justify-center">
-
-            <span className="text-8xl">👨‍💻</span>
-
+          <div className="w-80 h-80 rounded-3xl overflow-hidden border border-purple-500/30 bg-[#111]">
+            <img
+              src={about.image}
+              alt="About"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
